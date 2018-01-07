@@ -263,6 +263,10 @@
   const copyCodeEl = document.getElementById('copy-code');
   let fade = 0;
 
+  /**
+   * @param {string} HTML content that may be indented
+   * @return {string} unindented content
+   */
   const trim = (data) => {
     let spacesToRemove = -1;
     const lines = data.split('\n').map((x) => {
@@ -279,7 +283,7 @@
     }).map((x) => {
       return x.substr(spacesToRemove);
     });
-    return lines.join('\n');
+    return lines.join('\n').trim();
   };
 
   document.body.addEventListener('click', (ev) => {
