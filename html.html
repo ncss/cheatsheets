@@ -4,9 +4,14 @@
   <title>HTML Cheat Sheet</title>
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <link rel="stylesheet" href="cheatsheet.css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto+Slab:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto+Slab:300,400,700" rel="stylesheet" />
 </head>
 <body>
+
+<header>
+  <h1>NCSS HTML Cheat Sheet</h1>
+  <aside>(Click on the left item to copy to your clipboard)</aside>
+</header>
 
 <figure>
   <figcaption>Sections</figcaption>
@@ -244,16 +249,30 @@
 
 </figure>
 
+<div id="butterbar-holder">
+  <div class="butterbar" id="copy">
+    <h1>Copied&mdash;</h1>
+    <code><pre id="copy-code"></pre></code>
+  </div>
+</div>
 
 <script>
+(function() {
+  const codeEl = document.getElementById('copy');
+  const copyCodeEl = document.getElementById('copy-code');
+  let fade = 0;
+
   document.body.addEventListener('click', (ev) => {
     const target = ev.target;
-    if (!target || target.localName !== 'code') {
+    if (!target || target.localName !== 'code' || target.parentNode.localName !== 'figure') {
       return;
     }
 
     let content = '';
     const toCopy = target.nextElementSibling;
+    if (!toCopy) {
+      return;
+    }
     if (toCopy.localName === 'template') {
       const x = document.createElement('div');
       x.appendChild(toCopy.content.cloneNode(true));
@@ -265,6 +284,14 @@
       return;
     }
 
+    window.clearTimeout(fade);
+    fade = window.setTimeout(() => {
+      codeEl.classList.remove('show');
+    }, 2000);
+
+    codeEl.classList.add('show');
+    copyCodeEl.textContent = content;
+
     const text = document.createElement('input');
     text.value = content;
     document.body.appendChild(text);
@@ -273,6 +300,7 @@
     document.execCommand('copy');
     text.remove();
   });
+}());
 </script>
 
 </body>
