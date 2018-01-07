@@ -63,7 +63,7 @@ code {
   margin: 0;
 }
 
-figure {
+figure.cheatsheet {
   position: relative;
   display: grid;
   grid-template-columns: 160px 0 1fr;
@@ -71,7 +71,7 @@ figure {
   margin-bottom: 30px;
   border-bottom: 2px solid var(--border-color);
 }
-figcaption {
+figure.cheatsheet figcaption {
   top: -60px;
   height: 60px;
   line-height: 42px;
@@ -85,13 +85,13 @@ figcaption {
   border-bottom: 2px solid var(--border-color);
   padding: 0 0.5ch;
 }
-figure > code {
+figure.cheatsheet > code {
   grid-column: 1;
 }
-figure > article {
+figure.cheatsheet > article {
   grid-column: 3;
 }
-figure::after {
+figure.cheatsheet::after {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -105,7 +105,7 @@ figure::after {
 pre {
   font: inherit;
 }
-figure > code {
+figure.cheatsheet > code {
   position: relative;
   display: flex;
   align-items: center;
@@ -113,10 +113,10 @@ figure > code {
   cursor: pointer;
   padding: 12px 0;
 }
-figure > code.small {
+figure.cheatsheet > code.small {
   font-size: 0.75em;
 }
-figure > code::after {
+figure.cheatsheet > code::after {
   content: '';
   position: absolute;
   top: 0;
@@ -127,21 +127,21 @@ figure > code::after {
   z-index: 10;
   transition: opacity 0.125s;
 }
-figure > code:not(:hover)::after {
+figure.cheatsheet > code:not(:hover)::after {
   opacity: 0;
 }
-figure > code:nth-of-type(even) {
+figure.cheatsheet > code:nth-of-type(even) {
   background: var(--alternate-color);
 }
 span.title {
   opacity: 0.5;
 }
 
-article {
+figure.cheatsheet > article {
   display: flex;
   align-items: center;
   padding: 8px 12px;
 }
-article:nth-of-type(even) {
+figure.cheatsheet > article:nth-of-type(even) {
   background: var(--alternate-color);
 }
