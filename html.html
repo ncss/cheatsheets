@@ -105,6 +105,7 @@
       <section>
         <h2>Heading of subsection</h2>
         <p>More content</p>
+      </section>
     </section>
   </template>
   <article>
@@ -163,7 +164,7 @@
   </code>
   <template>
     <figure>
-      <figcaption>Figure 1: James Curran</figure>
+      <figcaption>Figure 1: James Curran</figcaption>
       James Curran looks like this:
       <img src="https://static.groklearning-cdn.com/static/images/marketing/about/james-2017-07@2x.png" alt="James Curran" width="150" height="150" />
     </figure>
@@ -262,6 +263,25 @@
   const copyCodeEl = document.getElementById('copy-code');
   let fade = 0;
 
+  const trim = (data) => {
+    let spacesToRemove = -1;
+    const lines = data.split('\n').map((x) => {
+      if (/^\s*$/.exec(x)) {
+        return '';
+      }
+      const firstIndex = /\S/.exec(x).index;
+      if (spacesToRemove === -1) {
+        spacesToRemove = firstIndex;
+      } else {
+        spacesToRemove = Math.min(spacesToRemove, firstIndex);
+      }
+      return x;
+    }).map((x) => {
+      return x.substr(spacesToRemove);
+    });
+    return lines.join('\n');
+  };
+
   document.body.addEventListener('click', (ev) => {
     const target = ev.target;
     if (!target || target.localName !== 'code' || target.parentNode.localName !== 'figure') {
@@ -283,6 +303,7 @@
     if (!content) {
       return;
     }
+    content = trim(content);
 
     window.clearTimeout(fade);
     fade = window.setTimeout(() => {
