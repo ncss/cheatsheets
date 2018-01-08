@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>HTML Cheat Sheet</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <link rel="stylesheet" href="cheatsheet.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto+Slab:300,400,700" rel="stylesheet" />
@@ -10,9 +11,32 @@
 <body>
 
 <header>
-  <h1>NCSS HTML Cheat Sheet</h1>
-  <aside>(Click on the left item to copy to your clipboard)</aside>
+  <h1>NCSS HTML Cheat Sheet (<a href="css.html">CSS</a>)</h1>
+  <aside>(Click on the left column to copy to your clipboard)</aside>
 </header>
+
+<details>
+  <summary><h2>Sample HTML Page</h2></summary>
+  <p>When starting a new HTML page, it should look a bit like this:</p>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;<aside data-aside="element/tag">html </aside>&gt;
+&lt;head&gt;
+  &lt;title&gt;The Page Title&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; src=&quot;styles.css&quot; /&gt;
+&lt;/head&gt; 
+&lt;body&gt;
+
+  Hello, world!
+  &lt;div <aside data-aside="attribute">hidden </aside>&gt;
+    I'm hidden text
+  &lt;/div&gt;
+
+  This is an image:
+  &lt;img <aside data-aside="attribute">src="static/image.jpeg" </aside> /&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</details>
 
 <figure class="cheatsheet">
   <figcaption>Sections</figcaption>
@@ -247,6 +271,16 @@
   </template>
   <article>
     <p>Something <big>big</big></p>
+  </article>
+
+  <code class="small">
+    &lt;!-- Comment --&gt;
+  </code>
+  <template>
+    <!-- Write something about your HTML here -->
+  </template>
+  <article>
+    <p>A comment that isn't displayed, but might be helpful next time you're reading the source code</p>
   </article>
 
 </figure>
