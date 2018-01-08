@@ -12,49 +12,6 @@ header aside {
   opacity: 0.5;
 }
 
-#butterbar-holder {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  pointer-events: none;
-}
-.butterbar {
-  padding: 12px;
-  margin: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
-  background: rgba(68, 68, 68, 0.95);
-  color: white;
-  border-radius: 4px;
-  max-width: calc(100% - 24px);
-  min-width: 50%;
-  min-height: 2em;
-  font-weight: 300;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
-  transition: opacity 0s;
-  font-size: 0.75em;
-  pointer-events: auto;
-}
-.butterbar h1 {
-  font: inherit;
-  opacity: 0.75;
-}
-.butterbar pre {
-  white-space: pre-wrap;
-}
-.butterbar:not(.show) {
-  transition-duration: 0.25s;
-  opacity: 0;
-  pointer-events: none !important;
-}
-
 code {
   font-family: 'Roboto Mono', monospace;
 }

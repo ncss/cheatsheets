@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <link rel="stylesheet" href="cheatsheet.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto+Slab:300,400,700" rel="stylesheet" />
+  <script src="copy.js" defer></script>
 </head>
 <body>
 
@@ -250,82 +251,9 @@
 
 </figure>
 
-<div id="butterbar-holder">
-  <div class="butterbar" id="copy">
-    <h1>Copied&mdash;</h1>
-    <code><pre id="copy-code"></pre></code>
-  </div>
-</div>
-
+<copy-element id="copy"></copy-element>
 <script>
-(function() {
-  const codeEl = document.getElementById('copy');
-  const copyCodeEl = document.getElementById('copy-code');
-  let fade = 0;
-
-  /**
-   * @param {string} HTML content that may be indented
-   * @return {string} unindented content
-   */
-  const trim = (data) => {
-    let spacesToRemove = -1;
-    const lines = data.split('\n').map((x) => {
-      if (/^\s*$/.exec(x)) {
-        return '';
-      }
-      const firstIndex = /\S/.exec(x).index;
-      if (spacesToRemove === -1) {
-        spacesToRemove = firstIndex;
-      } else {
-        spacesToRemove = Math.min(spacesToRemove, firstIndex);
-      }
-      return x;
-    }).map((x) => {
-      return x.substr(spacesToRemove);
-    });
-    return lines.join('\n').trim();
-  };
-
-  document.body.addEventListener('click', (ev) => {
-    const target = ev.target;
-    if (!target || target.localName !== 'code' || target.parentNode.localName !== 'figure') {
-      return;
-    }
-
-    let content = '';
-    const toCopy = target.nextElementSibling;
-    if (!toCopy) {
-      return;
-    }
-    if (toCopy.localName === 'template') {
-      const x = document.createElement('div');
-      x.appendChild(toCopy.content.cloneNode(true));
-      content = x.innerHTML;
-    } else {
-      content = toCopy.innerHTML;
-    }
-    if (!content) {
-      return;
-    }
-    content = trim(content);
-
-    window.clearTimeout(fade);
-    fade = window.setTimeout(() => {
-      codeEl.classList.remove('show');
-    }, 2000);
-
-    codeEl.classList.add('show');
-    copyCodeEl.textContent = content;
-
-    const text = document.createElement('input');
-    text.value = content;
-    document.body.appendChild(text);
-    text.select();
-    console.debug('copied', content);
-    document.execCommand('copy');
-    text.remove();
-  });
-}());
+  document.body.addEventListener('code', (ev) => copy.copy(ev.detail));
 </script>
 
 </body>
