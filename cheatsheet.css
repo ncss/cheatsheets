@@ -5,11 +5,49 @@ body {
   --border-color: rgb(192, 192, 192);
 }
 
+a {
+  color: blue;
+}
+a:hover {
+  color: red;
+}
+
 header {
   margin: 12px;
 }
 header aside {
   opacity: 0.5;
+}
+
+details {
+  margin: 12px;
+  background: #eee;
+  border-radius: 4px;
+  padding: 8px ;
+}
+details summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+details pre {
+  background: #f8f8f8;
+  padding: 6px;
+  margin: 8px 0;
+  border-radius: 2px;
+}
+details pre aside {
+  display: inline;
+  position: relative;
+}
+
+details pre aside::after {
+  content: '← ' attr(data-aside) ' ';
+  background: black;
+  color: white;
+  display: inline;
+  font-style: italic;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 code {
@@ -27,6 +65,9 @@ figure.cheatsheet {
   margin-top: 90px;
   margin-bottom: 30px;
   border-bottom: 2px solid var(--border-color);
+}
+figure.cheatsheet.wide {
+  grid-template-columns: 240px 0 1fr;
 }
 figure.cheatsheet figcaption {
   top: -60px;

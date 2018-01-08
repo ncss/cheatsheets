@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Cheat Sheet</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <link rel="stylesheet" href="cheatsheet.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto+Slab:300,400,700|Lobster" rel="stylesheet" />
+  <script src="copy.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>NCSS CSS Cheat Sheet (<a href="html.html">HTML</a>)</h1>
+  <aside>(Click on the left column to copy to your clipboard)</aside>
+</header>
+
+<details>
+  <summary><h2>Sample CSS File</h2></summary>
+  <p>A CSS file that changes basic styles:</p>
+  <pre><code><aside data-aside="selector">p { </aside>
+  font-family: 'Roboto', Sans-Serif;
+  <aside data-aside="attribute">font-size: 12px; </aside>
+}
+.james {
+  background: red;
+}</code></pre>
+</details>
+
+<figure class="cheatsheet wide">
+  <figcaption>Selectors</figcaption>
+
+  <code>
+    #james { ... }
+  </code>
+  <template>
+    #james {
+    }
+  </template>
+  <article>
+    <p>Select the identified element <code>&lt;p id=&quot;james&quot;&gt;</code></p>
+  </article>
+
+  <code>
+    .curran { ... }
+  </code>
+  <template>
+    .curran {
+    }
+  </template>
+  <article>
+    <p>Select elements of <code>&lt;p class=&quot;curran&quot;&gt;</code></p>
+  </article>
+
+  <code>
+    section { ... }
+  </code>
+  <template>
+    section {
+    }
+  </template>
+  <article>
+    <p>Select all <code>&lt;section&gt;</code> elements</p>
+  </article>
+
+</figure>
+
+<figure class="cheatsheet wide">
+  <figcaption>Colors</figcaption>
+
+  <code>
+    red, blue, green
+  </code>
+  <template>
+    pink
+  </template>
+  <article>
+    <p>HTML has many "built-in" <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Values">color keywords</a> to choose from</p>
+  </article>
+
+  <code>
+    rgb(<span style="color: red">0</span>, <span style="color: green">255</span>, <span style="color: blue">0</span>)
+  </code>
+  <template>
+    rgb(255, 0, 0)
+  </template>
+  <article>
+    <p>Specify colors with three parts: red, green, and blue, all between <code>0</code> (least) and <code>255</code> (most)
+  </article>
+
+  <code>
+    rgba(<span style="color: red">0</span>, <span style="color: green">255</span>, <span style="color: blue">0</span>,<span style="opacity: 0.5">0.5</span>)
+  </code>
+  <template>
+    rgba(0, 255, 0, 0.5)
+  </template>
+  <article>
+    <p>Add a fourth part in <code>rgba</code> showing how <span style="opacity: 0.5">transparent</span> the color is</p>
+  </article>
+
+  <code>
+    #<span style="color: red">ff</span><span style="color: green">00</span><span style="color: blue">ff</span>
+  </code>
+  <template>
+    #ff00ff
+  </template>
+  <article>
+    <p>You can also use hexadecimal values between <code>00</code> and <code>ff</code></p>
+  </article>
+
+</figure>
+
+<figure class="cheatsheet wide">
+  <figcaption>Text Attributes</figcaption>
+
+  <code class="small">
+    font-family: 'Roboto';
+  </code>
+  <template>
+    font-family: 'Roboto', Sans-Serif;
+  </template>
+  <article>
+    <p>Change font <span style="font-family: 'Lobster', Cursive;">family</span></p>
+  </article>
+
+  <code class="small">
+    font-size: 20px;
+  </code>
+  <template>
+    font-size: 20px;
+  </template>
+  <article>
+    <p>Change font <span style="font-size: 20px">size</span></p>
+  </article>
+
+  <code class="small">
+    text-align: center;
+  </code>
+  <template>
+    text-align: center;
+  </template>
+  <article style="justify-content: center;">
+    <p>Align text to <code>left</code>, <code>right</code>, or <code>center</code></p>
+  </article>
+
+  <code class="small">
+    text-decoration: none;
+  </code>
+  <template>
+    text-decoration: none;
+  </template>
+  <article>
+    <p>Set the decoration to
+        <code style="text-decoration: underline">underline</code>,
+        <code style="text-decoration: strikethrough">strikethrough</code>, or (very useful)
+        <code>none</code></p>
+  </article>
+
+  <code class="small">
+    text-shadow: 0 2px 0 grey;
+  </code>
+  <template>
+    text-shadow: 0 2px 0 grey;
+  </template>
+  <article>
+    <p>Add text <span style="text-shadow: 0 2px 0 grey">shadow</span>, made up of four parts: left, down, blur and color</p>
+  </article>
+
+</figure>
+
+<figure class="cheatsheet wide">
+  <figcaption>Presentation Attributes</figcaption>
+
+  <code style="color: red">
+    color: red;
+  </code>
+  <template>
+    color: red;
+  </template>
+  <article>
+    <p>Font color</p>
+  </article>
+
+  <code>
+    <span style="background: blue; color: white">background: blue;</span>
+  </code>
+  <template>
+    background: blue;
+  </template>
+  <article>
+    <p>Background color</p>
+  </article>
+
+  <code class="small">
+    border: 2px dashed red;
+  </code>
+  <template>
+    border: 2px dashed red;
+  </template>
+  <article>
+    <p>Set a <span style="border: 2px dashed red">border</span>: it can be of type <code>solid</code>, <code>dashed</code>, or <code>dotted</code></p>
+  </article>
+
+  <code class="small">
+    <span style="background: blue; border-radius: 10px; padding: 4px 8px; color: white;">border-radius: 10px;</span>
+  </code>
+  <template>
+    border-radius: 10px;
+  </template>
+  <article>
+    <p>Border radius (round borders)—works even without <code>border:</code></p>
+  </article>
+
+</figure>
+
+<figure class="cheatsheet wide">
+  <figcaption>Layout Attributes</figcaption>
+
+  <code>
+    padding: 16px;
+  </code>
+  <template>
+    padding: 16px;
+  </template>
+  <article>
+    <p>Give an element <span style="background: #eee; padding: 10px;">padding</span></p>
+  </article>
+
+  <code>
+    margin: 16px;
+  </code>
+  <template>
+    margin: 16px;
+  </template>
+  <article>
+    <p>Give an element <span style="background: #fff; margin: 16px;">margin</span></p>
+  </article>
+
+  <code>
+    display: grid;
+  </code>
+  <template>
+    display: grid;
+  </template>
+  <article>
+    <p>Set display mode (ask tutors for more information)</p>
+  </article>
+
+</figure>
+
+
+<copy-element id="copy"></copy-element>
+<script>
+  document.body.addEventListener('code', (ev) => copy.copy(ev.detail));
+</script>
+
+</body>
+</html>
