@@ -13,7 +13,7 @@ a:hover {
 }
 
 header {
-  margin: 12px;
+  margin: 24px;
 }
 header aside {
   opacity: 0.5;
@@ -69,6 +69,9 @@ figure.cheatsheet {
 figure.cheatsheet.wide {
   grid-template-columns: 240px 0 1fr;
 }
+figure.cheatsheet.single-column {
+  grid-template-columns: 1fr;
+}
 figure.cheatsheet figcaption {
   top: -60px;
   height: 60px;
@@ -81,7 +84,7 @@ figure.cheatsheet figcaption {
   width: 100%;
   box-sizing: border-box;
   border-bottom: 2px solid var(--border-color);
-  padding: 0 0.5ch;
+  padding: 0 24px;
 }
 figure.cheatsheet > code {
   grid-column: 1;
@@ -138,8 +141,35 @@ span.title {
 figure.cheatsheet > article {
   display: flex;
   align-items: center;
-  padding: 8px 12px;
+  padding: 12px 24px;
 }
 figure.cheatsheet > article:nth-of-type(even) {
   background: var(--alternate-color);
+}
+
+.design figure.cheatsheet {
+  grid-template-columns: 500px 0 1fr;
+}
+
+.design figure.cheatsheet.single-column {
+  display: block;
+}
+
+.design figure.cheatsheet > article {
+  display: block;
+}
+
+.design h1 {
+  margin: 1em 0 0.6em;
+}
+.design p {
+  margin-bottom: 1em;
+  line-height: 1.5em;
+  max-width: 600px;
+}
+.design ul {
+  max-width: 600px;
+}
+.design li {
+  margin-bottom: 1em;
 }
