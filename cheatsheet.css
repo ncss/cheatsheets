@@ -5,6 +5,10 @@ body {
   --border-color: rgb(192, 192, 192);
 }
 
+h1 {
+  margin: 1em 0 0.6em;
+}
+
 a {
   color: blue;
 }
@@ -17,6 +21,17 @@ header {
 }
 header aside {
   opacity: 0.5;
+}
+
+header .sheet-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+}
+
+.sheet-nav .selected {
+  color: black;
+  text-decoration: none;
 }
 
 details {
@@ -56,6 +71,10 @@ code {
 
 * {
   margin: 0;
+}
+
+header aside {
+  margin-top: 1em;
 }
 
 figure.cheatsheet {
@@ -159,9 +178,6 @@ figure.cheatsheet > article:nth-of-type(even) {
   display: block;
 }
 
-.design h1 {
-  margin: 1em 0 0.6em;
-}
 .design p {
   margin-bottom: 1em;
   line-height: 1.5em;
