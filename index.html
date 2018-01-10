@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Cheat Sheet</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <link rel="stylesheet" href="cheatsheet.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto+Slab:300,400,700" rel="stylesheet" />
+  <script src="copy.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>NCSS Cheat Sheets</h1>
+  <nav class="sheet-nav">
+    <a class="selected" href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="design.html">Design</a>
+    <a href="profile.html">Example</a>
+  </nav>
+  <aside>(Click on the left column to copy to your clipboard)</aside>
+</header>
+
+<details>
+  <summary><h2>Sample HTML Page</h2></summary>
+  <p>When starting a new HTML page, it should look a bit like this:</p>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;<aside data-aside="element/tag">html </aside>&gt;
+&lt;head&gt;
+  &lt;title&gt;The Page Title&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; src=&quot;styles.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  Hello, world!
+  &lt;div <aside data-aside="attribute">hidden </aside>&gt;
+    I'm hidden text
+  &lt;/div&gt;
+
+  This is an image:
+  &lt;img <aside data-aside="attribute">src="static/image.jpeg" </aside> /&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</details>
+
+<figure class="cheatsheet">
+  <figcaption>Sections</figcaption>
+
+  <code>
+    &lt;h1&gt;
+  </code>
+  <article>
+    <h1>Heading 1</h1>
+  </article>
+
+  <code>
+    &lt;h2&gt;
+  </code>
+  <article>
+    <h2>Heading 2</h2>
+  </article>
+
+  <code>
+    &lt;h3&gt;
+  </code>
+  <article>
+    <h3>Heading 3</h3>
+  </article>
+
+  <code>
+    &lt;h4&gt;
+  </code>
+  <article>
+    <h4>Heading 4</h4>
+  </article>
+
+  <code>
+    &lt;h5&gt;
+  </code>
+  <article>
+    <h5>Heading 5</h5>
+  </article>
+
+  <code>
+    &lt;h6&gt;
+  </code>
+  <article>
+    <h6>Heading 6</h6>
+  </article>
+
+  <code>
+    &lt;header&gt;
+  </code>
+  <template>
+    <header>
+      <h1>Page Title</h1>
+    </header>
+  </template>
+  <article>
+    Contains a common introduction to page
+  </article>
+
+  <code>
+    &lt;footer&gt;
+  </code>
+  <template>
+    <footer>
+      &copy; 2018 Your Group Name
+    </footer>
+  </template>
+  <article>
+    Used for copyright, citations, links to related documents, indexes etc
+  </article>
+
+  <code>
+    &lt;nav&gt;
+  </code>
+  <template>
+    <nav>
+      <a href="home.html">Home Page</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </template>
+  <article>
+    Contains site navigation links
+  </article>
+
+  <code>
+    &lt;section&gt;
+  </code>
+  <template>
+    <section>
+      <h1>Heading of section</h1>
+      <p>Some content</p>
+      <section>
+        <h2>Heading of subsection</h2>
+        <p>More content</p>
+      </section>
+    </section>
+  </template>
+  <article>
+    <p>
+      Grouping of content, typically including a heading, or any number of additional <code>&lt;section&gt;</code> elements
+    </p>
+  </article>
+
+  <code>
+    &lt;article&gt;
+  </code>
+  <template>
+    <article>Article text</article>
+  </template>
+  <article>
+    A self-contained 'thing', such as a blog post, news item, or tweet
+  </article>
+
+</figure>
+
+<figure class="cheatsheet wide">
+  <figcaption>Forms</figcaption>
+
+  <code class="small">
+    <pre>&lt;form method="POST"&gt;
+  &lt;input type="submit"&gt;</pre>
+  </code>
+  <template>
+    <form method="POST">
+      <input type="submit" />
+    </form>
+  </template>
+  <article>
+    Basic form with submit button
+  </article>
+
+  <code>
+    &lt;input type="text"&gt;
+  </code>
+  <template>
+    <input type="text" size="20" name="field_name"
+        placeholder="What the user should type here" />
+  </template>
+  <article>
+    <p>
+      Basic input box, <input type="text" placeholder="Text goes here" />, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types">other types here</a>
+    </p>
+  </article>
+
+  <code class="small">
+    <pre>&lt;label for="x"&gt;Text&lt;/label&gt;
+      &lt;input id="x"&gt;</pre>
+  </code>
+  <template>
+    <label for="x">Label for the input</label>
+    <input id="x" type="text" />
+  </template>
+  <article>
+    <p>
+      <label for="x" style="text-decoration: underline; cursor: context-menu;">Label for an input element</label> like this one <input type="text" id="x" />
+    </p>
+  </article>
+
+</figure>
+
+<figure class="cheatsheet">
+  <figcaption>Grouping content</figcaption>
+
+  <code>
+    &lt;p&gt;
+  </code>
+  <article>
+    <p>Paragraph text</p>
+  </article>
+
+  <code>
+    <pre>&lt;ol&gt;
+  &lt;li&gt;</pre>
+  </code>
+  <article>
+    <ol>
+      <li>Ordered List</li>
+      <li>Of Items</li>
+    </ol>
+  </article>
+
+  <code>
+    <pre>&lt;ul&gt;
+  &lt;li&gt;</pre>
+  </code>
+  <article>
+    <ul>
+      <li>Unordered List</li>
+      <li>With Dots</li>
+    </ul>
+  </article>
+
+  <code class="small">
+    <pre>&lt;figure&gt;
+  &lt;figcaption&gt;</pre>
+  </code>
+  <template>
+    <figure>
+      <figcaption>Figure 1: James Curran</figcaption>
+      James Curran looks like this:
+      <img src="https://static.groklearning-cdn.com/static/images/marketing/about/james-2017-07@2x.png" alt="James Curran" width="150" height="150" />
+    </figure>
+  </template>
+  <article>
+    Figure, diagram etc, or an image with an explicit label
+  </article>
+
+  <code>
+    &lt;main&gt;
+  </code>
+  <template>
+    <main>The main part of something</main>
+  </template>
+  <article>
+    The main part of a page
+  </article>
+
+</figure>
+
+<figure class="cheatsheet">
+  <figcaption>Other &amp; Text</figcaption>
+
+  <code class="small">
+    &lt;img src="p.png"&gt;
+  </code>
+  <template>
+    <img src="https://static.groklearning-cdn.com/static/images/marketing/about/james-2017-07@2x.png" alt="James Curran" width="150" height="150" />
+  </template>
+  <article>
+    <p>
+      <img src="p.png" alt="Books" width="16" height="16" />
+      <span class="title">Image</span>
+    </p>
+  </article>
+
+  <code class="small">
+    &lt;a href="p.html"&gt;
+  </code>
+  <article>
+    <a href="design.html">Link to another page</a>
+  </article>
+
+  <code>
+    &lt;strong&gt;
+  </code>
+  <template>
+    <strong>Important text</strong>
+  </template>
+  <article>
+    <p>Something <strong>important</strong></p>
+  </article>
+
+  <code>
+    &lt;em&gt;
+  </code>
+  <template>
+    <em>Emphasized text</em>
+  </template>
+  <article>
+    <p>Something <em>emphasized</em></p>
+  </article>
+
+  <code>
+    &lt;small&gt;
+  </code>
+  <template>
+    <small>Small text</small>
+  </template>
+  <article>
+    <p>Something <small>small</small></p>
+  </article>
+
+  <code>
+    &lt;big&gt;
+  </code>
+  <template>
+    <big>Big text</big>
+  </template>
+  <article>
+    <p>Something <big>big</big></p>
+  </article>
+
+  <code class="small">
+    &lt;!-- Comment --&gt;
+  </code>
+  <template>
+    <!-- Write something about your HTML here -->
+  </template>
+  <article>
+    <p>A comment that isn't displayed, but might be helpful next time you're reading the source code</p>
+  </article>
+
+</figure>
+
+<copy-element id="copy"></copy-element>
+<script>
+  document.body.addEventListener('code', (ev) => copy.copy(ev.detail));
+</script>
+
+</body>
+</html>
