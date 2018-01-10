@@ -55,14 +55,15 @@ h1 {
   opacity: 0;
   pointer-events: none !important;
 }
+
 </style>
 <div id="butterbar-holder">
   <div class="butterbar" id="copy">
     <h1>Copied&mdash;</h1>
     <code id="copy-code"></code>
+    <input type="text" id="copier" style="opacity: 0;" readonly />
   </div>
 </div>
-<input type="text" id="copier" hidden />
     `;
     this._codeEl = this._root.getElementById('copy');
     this._copyCodeEl = this._root.getElementById('copy-code');
